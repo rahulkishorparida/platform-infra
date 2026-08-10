@@ -1,0 +1,10 @@
+replicaCount: 2
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 2Gi
+
+autoscaleEnabled: true
+autoscaleMin: 2
+autoscaleMax: 5
