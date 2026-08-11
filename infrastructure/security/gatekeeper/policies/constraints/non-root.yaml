@@ -21,3 +21,5 @@ spec:
           - apps
         kinds:
           - Deployment
+          
+# For the K8sNonRoot policy, don't evaluate Deployments in these infrastructure namespaces.
