@@ -10,11 +10,29 @@ grafana:
   securityContext:
     runAsNonRoot: true
 
+  sidecar:
+    dashboards:
+      enabled: true
+      securityContext:
+        runAsNonRoot: true
+
+    datasources:
+      enabled: true
+      securityContext:
+        runAsNonRoot: true
+
 kubeStateMetrics:
   enabled: true
 
   securityContext:
     enabled: true
+    runAsNonRoot: true
+    runAsUser: 65534
+    runAsGroup: 65534
+    fsGroup: 65534
+
+prometheusOperator:
+  securityContext:
     runAsNonRoot: true
 
 prometheus:
