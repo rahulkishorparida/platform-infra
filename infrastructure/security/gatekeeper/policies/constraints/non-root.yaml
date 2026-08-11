@@ -1,7 +1,9 @@
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sNonRoot
+
 metadata:
   name: require-non-root
+
 spec:
   enforcementAction: deny
 
@@ -11,6 +13,8 @@ spec:
       - kube-system
       - gatekeeper-system
       - istio-system
+      - cert-manager
+      - local-path-storage
 
     kinds:
       - apiGroups:
