@@ -7,6 +7,16 @@ grafana:
   service:
     type: NodePort
 
+  securityContext:
+    runAsNonRoot: true
+
+kubeStateMetrics:
+  enabled: true
+
+  securityContext:
+    enabled: true
+    runAsNonRoot: true
+
 prometheus:
   enabled: true
 
