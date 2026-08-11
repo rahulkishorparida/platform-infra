@@ -1,6 +1,9 @@
 controller:
   replicaCount: 1
 
+  podSecurityContext:
+    runAsNonRoot: true
+
   service:
     type: NodePort
 
