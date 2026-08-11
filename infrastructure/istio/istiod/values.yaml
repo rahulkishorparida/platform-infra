@@ -5,7 +5,7 @@ resources:
     cpu: 500m
     memory: 2Gi
 
-# autoscaleEnabled: true
-autoscaleEnabled: false
+autoscaleEnabled: true
+# autoscaleEnabled: false
 autoscaleMin: 2
 autoscaleMax: 5
