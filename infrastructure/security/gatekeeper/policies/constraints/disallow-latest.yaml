@@ -4,10 +4,11 @@ metadata:
   name: disallow-latest-image
 spec:
   enforcementAction: deny
-
+# Depeloyment will cot created if violates the policy
   match:
     kinds:
       - apiGroups:
           - apps
         kinds:
           - Deployment
+          # validate obj. of type Deployment

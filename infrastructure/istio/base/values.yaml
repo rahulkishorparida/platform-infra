@@ -1,2 +1,4 @@
 base:
   validationFailurePolicy: Fail
+  # If Istio's validation webhook cannot validate the resource, reject the request.
+  # When the Istio validation webhook cannot be reached, fail the admission request.
