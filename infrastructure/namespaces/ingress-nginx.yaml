@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: ingress-nginx
   labels:
-    istio-injection: enabled
+    istio-injection: disabled
