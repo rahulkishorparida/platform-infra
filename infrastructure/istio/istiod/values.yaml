@@ -10,6 +10,6 @@ autoscaleEnabled: true
 autoscaleMin: 2
 autoscaleMax: 5
 
-# pilot:
-#   cni:
-#     enabled: true
+pilot:
+  cni:
+    enabled: true
