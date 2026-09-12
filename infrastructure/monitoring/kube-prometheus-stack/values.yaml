@@ -1,8 +1,16 @@
 grafana:
   enabled: true
 
-  adminUser: admin
-  adminPassword: admin123
+  admin:
+    existingSecret: grafana-admin
+    userKey: admin-user
+    passwordKey: admin-password
+
+  service:
+    type: NodePort
+
+  securityContext:
+    runAsNonRoot: true
 
   service:
     type: NodePort
@@ -22,3 +30,89 @@ prometheus:
 
 alertmanager:
   enabled: true
+
+# ---
+
+# grafana:
+#   enabled: true
+
+#   adminUser: admin
+#   adminPassword: admin123
+
+#   service:
+#     type: NodePort
+
+#   securityContext:
+#     runAsNonRoot: true
+
+#   persistence:
+#     enabled: true
+#     storageClassName: gp3
+#     size: 5Gi
+
+# kubeStateMetrics:
+#   enabled: true
+
+#   securityContext:
+#     enabled: true
+#     runAsNonRoot: true
+
+# prometheus:
+#   enabled: true
+
+#   prometheusSpec:
+#     retention: 7d
+
+#     storageSpec:
+#       volumeClaimTemplate:
+#         spec:
+#           storageClassName: gp3
+#           resources:
+#             requests:
+#               storage: 20Gi
+
+#   resources:
+#     requests:
+#       cpu: 250m
+#       memory: 512Mi
+#     limits:
+#       cpu: 1
+#       memory: 2Gi
+
+
+# alertmanager:
+#   enabled: true
+
+#   config:
+#     global:
+#       smtp_smarthost: "smtp.gmail.com:587"
+#       smtp_from: "sender@gmail.com"
+#       smtp_auth_username: "sender@gmail.com"
+#       smtp_auth_password: "APP_PASSWORD"
+#       smtp_require_tls: true
+
+#     route:
+#       receiver: email-alerts
+
+#     receivers:
+#       - name: email-alerts
+#         email_configs:
+#           - to: "receiver@gmail.com"
+#             send_resolved: true
+
+#   alertmanagerSpec:
+#     storage:
+#       volumeClaimTemplate:
+#         spec:
+#           storageClassName: gp3
+#           resources:
+#             requests:
+#               storage: 5Gi
+
+#     resources:
+#       requests:
+#         cpu: 100m
+#         memory: 128Mi
+#       limits:
+#         cpu: 500m
+#         memory: 512Mi
