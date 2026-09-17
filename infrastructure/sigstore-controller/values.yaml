@@ -1,0 +1,5 @@
+webhook:
+  securityContext:
+    enabled: true
+    runAsUser: 1000
+    runAsNonRoot: true
