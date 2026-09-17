@@ -15,6 +15,7 @@ spec:
       - istio-system
       - cert-manager
       - local-path-storage
+      - cosign-system
 
     kinds:
       - apiGroups:
