@@ -5,6 +5,7 @@ metadata:
   labels:
     istio-injection: enabled
     environment: dev
+    policy.sigstore.dev/include: "true"
     pod-security.kubernetes.io/enforce: restricted
     pod-security.kubernetes.io/audit: restricted
     pod-security.kubernetes.io/warn: restricted
