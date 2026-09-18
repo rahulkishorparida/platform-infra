@@ -1,0 +1,16 @@
+apiVersion: policy.sigstore.dev/v1beta1
+kind: ClusterImagePolicy
+metadata:
+  name: employee-service-signed
+spec:
+  images:
+    - glob: "docker.io/rahulkishorparida/employee-service**"
+
+  authorities:
+    - keyless:
+        url: https://fulcio.sigstore.dev
+        identities:
+          - issuer: https://token.actions.githubusercontent.com
+            subject: "repo:rahulkishorparida@212993266/employee-service@1332686871:ref:refs/heads/main"
+      ctlog:
+        url: https://rekor.sigstore.dev
