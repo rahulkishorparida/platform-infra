@@ -11,6 +11,6 @@ spec:
         url: https://fulcio.sigstore.dev
         identities:
           - issuer: https://token.actions.githubusercontent.com
-            subject: "repo:rahulkishorparida@212993266/employee-service@1332686871:ref:refs/heads/main"
+            subject: "https://github.com/rahulkishorparida/employee-service/.github/workflows/ci-cd.yml@refs/heads/main"
       ctlog:
         url: https://rekor.sigstore.dev
