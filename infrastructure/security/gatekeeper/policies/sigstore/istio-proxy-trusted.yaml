@@ -4,7 +4,7 @@ metadata:
   name: istio-proxy-trusted
 spec:
   images:
-    - glob: "registry.istio.io/release/proxyv2:1.30.4**"
+    - glob: "registry.istio.io/release/proxyv2:1.30.4@**"
 
   authorities:
     - static:
