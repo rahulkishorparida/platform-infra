@@ -4,7 +4,7 @@ metadata:
   name: employee-service-signed
 spec:
   images:
-    - glob: "docker.io/rahulkishorparida/employee-service**"
+    - glob: "index.docker.io/rahulkishorparida/employee-service**"
 
   authorities:
     - keyless:
