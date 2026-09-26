@@ -1,13 +1,11 @@
-hostNetwork:
-  enabled: true
+# hostNetwork:
+#   enabled: true
 
-    # containerPort: 10251
-
-args:
-  - --secure-port=10251
-  - --kubelet-insecure-tls
-  - --kubelet-preferred-address-types=InternalIP,Hostname
-  - --metric-resolution=15s
+# args:
+#   - --secure-port=10251
+#   - --kubelet-insecure-tls
+#   - --kubelet-preferred-address-types=InternalIP,Hostname
+#   - --metric-resolution=15s
 
 # hostNetwork:
 #   enabled: true
@@ -27,3 +25,27 @@ args:
 #   - name: kubelet-ca
 #     mountPath: /etc/kubernetes/kubelet-ca
 #     readOnly: true
+
+
+      # helm:
+      # values: |
+      #   hostNetwork:
+      #     enabled: true
+
+      #   containerPort: 10251
+
+      #   args:
+      #     - --secure-port=10251
+      #     - --kubelet-insecure-tls
+      #     - --kubelet-preferred-address-types=InternalIP,Hostname
+      #     - --metric-resolution=15s
+
+      
+    #   helm:
+    #     valueFiles:
+    #       - $values/infrastructure/metrics-server/values.yaml
+
+    # # Git repository containing the values.yaml
+    # - repoURL: https://github.com/rahulkishorparida/platform-infra.git
+    #   targetRevision: main
+    #   ref: values
