@@ -1,0 +1,18 @@
+hostNetwork:
+  enabled: true
+
+args:
+  - --secure-port=10251
+  - --kubelet-certificate-authority=/etc/kubernetes/kubelet-ca/ca.crt
+  - --kubelet-preferred-address-types=Hostname,InternalIP
+  - --metric-resolution=15s
+
+extraVolumes:
+  - name: kubelet-ca
+    secret:
+      secretName: kubelet-ca
+
+extraVolumeMounts:
+  - name: kubelet-ca
+    mountPath: /etc/kubernetes/kubelet-ca
+    readOnly: true
