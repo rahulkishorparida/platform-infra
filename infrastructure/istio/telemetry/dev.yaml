@@ -1,0 +1,9 @@
+apiVersion: telemetry.istio.io/v1
+kind: Telemetry
+metadata:
+  name: dev-metrics
+  namespace: dev
+spec:
+  metrics:
+    - providers:
+        - name: prometheus
