@@ -5,14 +5,19 @@ metadata:
   namespace: monitoring
   labels:
     release: kube-prometheus-stack
+
 spec:
   namespaceSelector:
     matchNames:
       - dev
+
   selector:
     matchLabels:
       app: employee-service
+
   podMetricsEndpoints:
-    - targetPort: 15020
+    - interval: 15s
       path: /stats/prometheus
-      interval: 15s
+      targetPort: 15090
+
+
