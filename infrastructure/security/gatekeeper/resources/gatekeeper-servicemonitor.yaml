@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: gatekeeper
+  namespace: monitoring
+  labels:
+    release: kube-prometheus-stack
+spec:
+  namespaceSelector:
+    matchNames:
+      - gatekeeper-system
+  selector:
+    matchLabels:
+      app: gatekeeper
+      component: metrics
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s
