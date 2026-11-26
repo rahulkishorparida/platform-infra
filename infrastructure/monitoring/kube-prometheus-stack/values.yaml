@@ -32,6 +32,8 @@ prometheus:
     podMetadata:
       annotations:
         sidecar.istio.io/inject: "true"
+      labels:
+        sidecar.istio.io/inject: "true"
 
 alertmanager:
   enabled: true
