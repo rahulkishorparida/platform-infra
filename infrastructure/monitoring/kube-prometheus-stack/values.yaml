@@ -12,9 +12,6 @@ grafana:
   securityContext:
     runAsNonRoot: true
 
-  service:
-    type: NodePort
-
   securityContext:
     runAsNonRoot: true
 
